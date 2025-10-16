@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index.css" rel="stylesheet">
+    <script src="index.js"></script>
+    </head>
+    <body>
+    <div class="toast-container" id="toastContainer"></div>
+    
+    <div class="main-container">
+        <!-- Cipher Selection Screen -->
+        <div id="selectionScreen">
+            <button class="cipher-btn" onclick="selectCipher('mono')">MONOALPHABETIC CIPHER</button>
+            <button class="cipher-btn" onclick="selectCipher('poly')">POLYALPHABETIC CIPHER</button>
+            <button class="cipher-btn" onclick="selectCipher('vigenere')">VIGENERE CIPHER</button>
+        </div>
+        
+        <!-- Mono Alphabetic Cipher Screen -->
+<div id="monoCipher" class="cipher-container">
+    <div class="title-header">MONOALPHABETIC CIPHER</div>
+
+    <div class="input-label">PLAIN / CIPHER TEXT</div>
+    <input type="text" class="input-box" id="monoPlainText" placeholder="ENTER TEXT:">
+
+    <div class="input-label">KEY</div>
+    <input type="text" class="input-box" id="monoKey" placeholder="ENTER KEY:" inputmode="numeric" pattern="[0-9]*">
+
+    <div class="input-label">OUTPUT</div>
+    <div class="output-box" id="monoOutput"></div>
+
+    <div class="text-center mt-4">
+        <button class="action-btn" onclick="goBack()">←</button>
+        <button class="action-btn" onclick="processMonoCipher()">ENCRYPT</button>
+        <button class="action-btn" onclick="processMonoDecipher()">DECRYPT</button>
+        <button class="action-btn" onclick="resetMono()">↻</button>
+    </div>
+</div>
+
+<!-- Polyalphabetic Cipher Screen -->
+<div id="polyCipher" class="cipher-container">
+    <div class="title-header">POLYALPHABETIC CIPHER</div>
+
+    <div class="input-label">PLAIN / CIPHER TEXT</div>
+    <input type="text" class="input-box" id="polyPlainText" placeholder="ENTER TEXT:">
+
+    <div class="input-label">KEY</div>
+    <input type="text" class="input-box" id="polyKey" placeholder="ENTER KEY:" inputmode="numeric" pattern="[0-9]*">
+
+    <div class="input-label">OUTPUT</div>
+    <div class="output-box" id="polyOutput"></div>
+
+    <div class="text-center mt-4">
+        <button class="action-btn" onclick="goBack()">←</button>
+        <button class="action-btn" onclick="processPolyCipher()">ENCRYPT</button>
+        <button class="action-btn" onclick="processPolyDecipher()">DECRYPT</button>
+        <button class="action-btn" onclick="resetPoly()">↻</button>
+    </div>
+</div>
+
+<!-- Vigenere Cipher Screen -->
+<div id="vigenereCipher" class="cipher-container">
+    <div class="title-header">VIGENERE CIPHER</div>
+
+    <div class="input-label">PLAIN / CIPHER TEXT</div>
+    <input type="text" class="input-box" id="vigenerePlainText" placeholder="ENTER TEXT:">
+
+    <div class="input-label">KEY</div>
+    <input type="text" class="input-box" id="vigenereKey" placeholder="ENTER KEY (comma-separated):" inputmode="numeric">
+
+    <div class="input-label">OUTPUT</div>
+    <div class="output-box" id="vigenereOutput"></div>
+
+    <div class="text-center mt-4">
+        <button class="action-btn" onclick="goBack()">←</button>
+        <button class="action-btn" onclick="processVigenereCipher()">ENCRYPT</button>
+        <button class="action-btn" onclick="processVigenereDecipher()">DECRYPT</button>
+        <button class="action-btn" onclick="resetVigenere()">↻</button>
+    </div>
+</div>
+
+</body>
+</html>
